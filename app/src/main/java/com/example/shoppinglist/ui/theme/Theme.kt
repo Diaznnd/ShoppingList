@@ -12,15 +12,32 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 
 private val DarkColorScheme = darkColorScheme(
-    primary = Purple80,
-    secondary = PurpleGrey80,
-    tertiary = Pink80
+    primary = BrownDark,
+    onPrimary = BrownOn,
+    primaryContainer = BrownDarkPrimaryContainer,
+    onPrimaryContainer = BrownDarkOnPrimaryContainer,
+    secondary = BrownSecondary,
+    secondaryContainer = BrownDarkSecondaryContainer,
+    onSecondaryContainer = BrownDarkOnSecondaryContainer,
+    background = BrownDarkBackground,
+    onBackground = BrownDarkOnBackground,
+    surface = BrownSurfaceDark,
+    onSurface = BrownOnSurfaceDark
 )
 
 private val LightColorScheme = lightColorScheme(
-    primary = Purple40,
-    secondary = PurpleGrey40,
-    tertiary = Pink40
+    primary = BrownLight,
+    onPrimary = BrownOn,
+    primaryContainer = BrownPrimaryContainer,
+    onPrimaryContainer = BrownOnPrimaryContainer,
+    secondary = BrownSecondary,
+    secondaryContainer = BrownSecondaryContainer,
+    onSecondaryContainer = BrownOnSecondaryContainer,
+    background = BrownBackground,
+    onBackground = BrownOnBackground,
+    surface = BrownSurface,
+    onSurface = BrownOnSurface
+
 
     /* Other default colors to override
     background = Color(0xFFFFFBFE),
@@ -37,7 +54,7 @@ private val LightColorScheme = lightColorScheme(
 fun ShoppingListTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     // Dynamic color is available on Android 12+
-    dynamicColor: Boolean = true,
+    dynamicColor: Boolean = false,
     content: @Composable () -> Unit
 ) {
     val colorScheme = when {
@@ -53,6 +70,7 @@ fun ShoppingListTheme(
     MaterialTheme(
         colorScheme = colorScheme,
         typography = Typography,
+        shapes = Shapes,
         content = content
     )
 }
